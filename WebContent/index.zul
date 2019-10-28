@@ -1,0 +1,7 @@
+<?page title="Auto Generated index.zul"?>
+<window title="Get Money" border="normal"
+	 width="80%" height="80%">
+
+<label>ATM SIMULATOR</label>
+
+</window>

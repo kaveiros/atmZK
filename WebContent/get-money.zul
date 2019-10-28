@@ -1,0 +1,37 @@
+<?page title="Withdraw Money" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window title="Get Money" border="normal"
+	 width="80%" height="80%"
+	 apply="org.zkoss.bind.BindComposer" viewModel="@id('vm') @init('info.nikoschantzopoulos.VM.GetMoneyVM')">
+
+<vlayout>
+	<grid>
+		<columns>
+			<column width="150px"/>
+			<column/>
+		</columns>
+		<rows>
+			<row>
+				Total Amount of Euros:
+				<label value="@bind(vm.initialData.total)"/>			
+			</row>
+			<row>
+				Available Fifty notes:
+				<label value="@bind(vm.initialData.numberOfFifty)"/>
+			</row>
+			<row>
+				Available Twenty notes:
+				<label value="@bind(vm.initialData.numberOfTweenty)"/>
+			</row>
+		</rows>
+	
+	</grid>
+	<hlayout>
+		<label>Amount to withdraw :</label>
+		<longbox onOK="@command('get-money')" value="@bind(vm.amount.value)" constraint="no negative"/>
+	</hlayout>
+	<button  onClick="@command('get-money')" label="Withdraw" />
+</vlayout>
+
+</window>
+</zk>
